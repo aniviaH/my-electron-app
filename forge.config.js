@@ -4,6 +4,16 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    // osxSign: {},
+    // osxNotarize: {
+    //   tool: 'notarytool',
+    //   // appleId: process.env.APPLE_ID,
+    //   // appleIdPassword: process.env.APPLE_PASSWORD,
+    //   // teamId: process.env.APPLE_TEAM_ID
+    //   appleId: 'liuhuan@liuhuan.fun',
+    //   appleIdPassword: 'liuhuan123456',
+    //   teamId: 'liuhuan'
+    // }
   },
   rebuildConfig: {},
   makers: [
@@ -41,4 +51,17 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'aniviaH',
+          name: 'my-electron-app'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ]
 };
