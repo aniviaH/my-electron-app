@@ -1,5 +1,6 @@
 // console.log('Hello from Electron 👋')
 
+const { ipcMain } = require('electron')
 const { app, BrowserWindow } = require('electron/main')
 const path = require('path')
 
@@ -32,9 +33,9 @@ const createWindow = () => {
  */
 // app.on('ready', () => {
 app.whenReady().then(() => {
+  ipcMain.handle('ping', () => 'pong')
   createWindow()
 
-  
   app.on('activate', () => {
     /**
      * Open a window if none are open (macOS)
