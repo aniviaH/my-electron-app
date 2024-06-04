@@ -1,6 +1,6 @@
 {
   "name": "my-electron-app",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "学习electron官网的项目app",
   "main": "main.js",
   "scripts": {

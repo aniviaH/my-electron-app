@@ -4,7 +4,7 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
-    // osxSign: {},
+    osxSign: {},
     // osxNotarize: {
     //   tool: 'notarytool',
     //   // appleId: process.env.APPLE_ID,
@@ -58,9 +58,7 @@ module.exports = {
         repository: {
           owner: 'aniviaH',
           name: 'my-electron-app'
-        },
-        prerelease: false,
-        draft: true
+        }
       }
     }
   ]
