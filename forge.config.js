@@ -58,7 +58,9 @@ module.exports = {
         repository: {
           owner: 'aniviaH',
           name: 'my-electron-app'
-        }
+        },
+        prerelease: false,
+        draft: true
       }
     }
   ]
